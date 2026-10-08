@@ -2,7 +2,7 @@
 
 re='.+@(alu\.)?edu\.gva\.es$'
 if [[ $# -eq 0 ]]; then
-    echo"Uso: $0 <direccion_de_correo>"
+    echo"Uso: $0 direccion_de_correo"
     exit 1
 fi
 
