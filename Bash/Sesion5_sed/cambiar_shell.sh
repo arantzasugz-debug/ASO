@@ -1,5 +1,8 @@
 #!/bin/bash
 
+usuario=$1
+shell=$2
+
 if [[ $# -eq 2 ]]; then
  echo "Uso: $0 de parametros"
  exit 1
