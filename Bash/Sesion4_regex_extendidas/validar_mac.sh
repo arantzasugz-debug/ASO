@@ -1,5 +1,8 @@
 #!/bin/bash
-
+if [[ $# -eq 0 ]]; then
+ echo "Uso: $0 mac"
+ exit 1
+fi
 
 re='^([0-9a-fA-F]{2}[\:|\-]){5}[0-9a-fA-F]{2}$' 
 
