@@ -22,7 +22,7 @@ if ! [[ $shell =~ $re]]; then
      exit 1
 fi
 
-sed -i.bak -E 's|^usuario:([^:]+:){5}/bin/[^:]+$|\1$shell|' "$fichero"
+sed -i.bak '/^usuario:/s|:[^:]*$)|:$shell|' "$fichero"
 
 grep -E "^$usuario:" "$fichero"
 
