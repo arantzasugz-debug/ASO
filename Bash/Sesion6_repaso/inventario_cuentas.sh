@@ -14,10 +14,10 @@ contador_mayores=0
 
 while IFS=':' read -r usuario x uid gid desc home shell; do
 
-if [ "$shell" = "$shell_buscada" ]; then 
+if [[ "$shell" = "$shell_buscada" ]]; then 
      echo "$usuario:$uid:$home:$shell"
      ((contador_total++))
-     if [ "uid" -ge 1000 ]; then
+     if [[ "uid" -ge 1000 ]]; then
          ((contador_mayores++))
     fi 
 fi
