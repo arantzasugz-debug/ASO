@@ -3,6 +3,12 @@
 re='^(/[a-z]+)+$'
 shell_buscada="${1:-/bin/bash}"
 
+if [ $# -gt 1 ]; then 
+     echo "Error: se espera como maximo un parametro" >&2
+     exit 1
+fi
+
+     
 if [[ ! "$shell_buscada" =~ $re ]]; then
     echo "Error: $shell_buscada no es una ruta valida" 
     exit 1
