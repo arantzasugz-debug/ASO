@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -gt 1 ]; then
+     echo "ERROR: mas parametros de los esperados"
+     echo "Uso: $0 [N]"
+     exit 1
+fi
+
 n=$1
 re='^[0-9]+$'
 if [[ -n "$n" ]]; then
