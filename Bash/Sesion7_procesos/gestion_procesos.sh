@@ -2,7 +2,11 @@
 
 listar_usuario() {
    read - p "Introduce el nombre de usuario" usuario
-
+   if id "$usuario" >/dev/null 2>&1; then
+       ps -u "usuario"
+   else
+       echo "Error: el usuario '$usuario' no existe."
+   fi
 }
 
 buscar_procesos() {
@@ -30,7 +34,6 @@ echo "3) Mostrar los N procesos que más CPU consumen"
 echo "4) Cambiar la prioridad de un proceso"
 echo "5) Finalizar un proceso"
 echo "6) Salir"
-
 read -p "Introduzca la opcion: " opcion
 
 case $opcion in 
@@ -39,8 +42,7 @@ case $opcion in
 3) top_cpu;;
 4) cambiar_prioridad ;;
 5) finalizar_proceso ;;
-6) opcion ;;
+6) echo "Saliendo del gestor de procesos:"; exit  ;;
 *) echo "ERROR: opcion no reconocida" ;;
-
 esac
 done
